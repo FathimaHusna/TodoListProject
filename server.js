@@ -1,9 +1,11 @@
 //using express
 const express = require('express')
+const cors = require('cors')
 //create an instance of expresss
 const app = express()
 const mongoose = require('mongoose')
 app.use(express.json())
+app.use(cors())
 
 //Define a route
 // app.get('uri', callbackfunction)
@@ -123,7 +125,7 @@ app.delete('/todos/:tid', async(req, res)=>{
 })
 
 //Start the server
-const port = 3000;
+const port = 8000;
 app.listen(port, ()=> {
     console.log(`Server is listening on ${port}`)
 })
